@@ -3,7 +3,7 @@ import { AccumulationChartComponent, AccumulationSeriesCollectionDirective, Accu
 
 import { useStateContext } from '../../Contexts/ContextProvider';
 
-const Doughnut = ({ id, data, legendVisiblity, height }) => {
+const Doughnut = ({ id, data, legendVisiblity, height, width }) => {
   const { currentMode } = useStateContext();
 
   return (
@@ -11,6 +11,7 @@ const Doughnut = ({ id, data, legendVisiblity, height }) => {
       id={id}
       legendSettings={{ visible: legendVisiblity, background: 'white' }}
       height={height}
+      width={width}
       background={currentMode === 'Dark' ? '#33373E' : '#fff'}
       tooltip={{ enable: true }}
     >
@@ -21,13 +22,13 @@ const Doughnut = ({ id, data, legendVisiblity, height }) => {
           dataSource={data}
           xName="x"
           yName="y"
-          innerRadius="40%"
+          innerRadius="60%"
           startAngle={0}
           endAngle={360}
-          radius="70%"
+          radius="80%"
           explode
           explodeOffset="10%"
-          explodeIndex={2}
+          explodeIndex={0}
           dataLabel={{
             visible: true,
             name: 'text',

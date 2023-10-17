@@ -1,7 +1,7 @@
 //import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 //import { SiShopware } from "react-icons/si";
-import { MdOutlineCancel, MdDashboard, MdKeyboardArrowDown } from "react-icons/md";
+import { MdOutlineCancel, MdDashboard, MdKeyboardArrowDown, MdKeyboardArrowRight } from "react-icons/md";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 import avatar from '../Data/avatar.jpg';
 import { links } from "../Data/dummy";
@@ -28,16 +28,6 @@ const Sidebar = () => {
             <Link to="/" onClick={handleCloseSidebar} className="items-center gap-3 ml-3 mt-4 flex text-xl font-extrabold tracking-tight dark:text-white">
               <MdDashboard /> <span>Dashboard</span>
             </Link>
-            <TooltipComponent content="Menu" position="BottomCenter">
-              <button
-                type="button"
-                onClick={() => setActiveMenu(!activeMenu)}
-                style={{ color: currentColor }}
-                className="text-xl rounded-full p-3 hover:bg-light-gray mt-4 block md:hidden"
-              >
-                <MdOutlineCancel />
-              </button>
-            </TooltipComponent>
           </div>
           <div className="mt-10 ">
             {links.map((item) => (
@@ -54,6 +44,10 @@ const Sidebar = () => {
                   >
                     {link.icon}
                     <span className="capitalize ">{link.name}</span>
+                    <div className="flex justify-between items-center">
+                    <MdKeyboardArrowRight className="right"/>
+                    </div>
+                    
                   </NavLink>
                 ))}
               </div>
@@ -73,12 +67,15 @@ const Sidebar = () => {
               alt="user-profile"
             />
             <p>
-              <span className="text-gray-400 text-14">Evano</span>{' '}
+              <span className="text-gray-400 text-14">Evano</span><br/>
               <span className="text-gray-400 font-bold ml-1 text-11">
                 Project Manager
               </span>
             </p>
-            <MdKeyboardArrowDown className="text-gray-400 text-14" />
+            <div className="flex justify-between items-center">
+            <MdKeyboardArrowDown className="right text-gray-400 text-14"/>
+            </div>
+            
           </div>
         </TooltipComponent>
       </footer>

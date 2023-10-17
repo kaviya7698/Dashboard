@@ -7,8 +7,24 @@
   background-color: #040440;
   color: white;
 }
+.block{
+  display: inline;
+}
+.right{
+  float: right;
+}
 .md:w-70{
   width: 17rem;
+}
+.search{
+  width: 255px;
+  height: 30px;
+  border-radius: 3px;
+}
+.sicon{
+  position: absolute;
+  margin-top: 7px;
+  margin-left: 220px;
 }
 .bottom-profile{
   margin: 20px; 

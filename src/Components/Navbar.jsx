@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react';
-import { AiOutlineMenu } from 'react-icons/ai';
+import { AiOutlineMenu, AiOutlineSearch } from 'react-icons/ai';
 import { FiShoppingCart } from 'react-icons/fi';
 import { BsChatLeft } from 'react-icons/bs';
+import {HiHand} from 'react-icons/hi';
+import {SiElasticsearch} from 'react-icons/si'
 import { RiNotification3Line } from 'react-icons/ri';
 import { MdKeyboardArrowDown } from 'react-icons/md';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
-
 import avatar from '../Data/avatar.jpg';
 import { Cart, Chat, Notification, UserProfile } from '.';
 import { useStateContext } from '../Contexts/ContextProvider';
@@ -51,15 +52,17 @@ const Navbar = () => {
   const handleActiveMenu = () => setActiveMenu(!activeMenu);
 
   return (
-<div className="flex justify-between mt-10 p-2 md:ml-6 md:mr-6 relative">
+<div className="flex justify-between mt-5 p-2 md:ml-6 md:mr-6 relative">
 <p>
     <span className="text-gray-400 text-14">Hi,</span>{' '}
     <span className="text-gray-400 font-bold ml-1 text-14">
       Michael
     </span>
+    <HiHand className='block'/>
   </p>
   <div className="flex justify-between p-2 md:ml-6 md:mr-6 relative">
-  <input type="search" placeholder='Search' />
+  <input type="search" className='search' placeholder='Search' />
+  <AiOutlineSearch  className='sicon'/>
   </div>
   
 </div>
